@@ -1,0 +1,21 @@
+<div class="container">
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+      <span class="fs-4"><%= page.title || config.title %></span>
+    </a>
+
+    <ul class="nav nav-pills">
+      <% for (var i in theme.menu){ %>
+        <li class="nav-item">
+            <a class="nav-link px-2 <%=  url.includes(url_for(theme.menu[i])) ? 'link-secondary' : '' %>" href="<%- theme.menu[i].url ? url_for(theme.menu[i].url) : url_for(theme.menu[i]) %>">
+                <% if (theme.menu[i].icon) { %>
+                    <i class="fa fa-<%= theme.menu[i].icon %> fa-stack-2x"></i>
+                <% } else { %>
+                    <%= i %>
+                <% } %>
+            </a>
+        </li>
+    <% } %>
+    </ul>
+  </header>
+</div>

@@ -1,0 +1,46 @@
+<%
+    var items = [];
+    var title = '';
+    var isTagIndex = page.type === 'tags' || page.type === 'tag';
+    var isCategoryIndex = page.type === 'categories' || page.type === 'category';
+    if (isTagIndex) {
+        items = site.tags;
+        title = __('tags');
+    } else if (isCategoryIndex) {
+        items = site.categories;
+        title = __('categories');
+    }
+%>
+
+<% if (isTagIndex || isCategoryIndex) { %>
+    <header class="intro-header" style="background-image: url('<%- url_for(theme.index_cover) %>')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1><%- page.title %></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <% items.forEach(function(item){ %>
+                    <%- partial('_partial/tag-category-index', {item: item}) %>
+                <% }); %>
+                <div class="archive-before-pagination"></div>
+            </div>
+        </div>
+    </div>
+<% } else { %>
+    <section class="main">
+        <%- partial('_partial/article-full', {item: page}) %>
+    </section>
+<% } %>
+
+
+

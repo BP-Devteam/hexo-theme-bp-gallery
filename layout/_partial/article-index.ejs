@@ -1,0 +1,42 @@
+<div class="card mb-3">
+    <a href="<%- config.root %><%- item.path %>" class="text-decoration-none">
+    <% if(item.cover) { %>
+    <img src="<%- item.cover %>" class="card-img-top" alt="...">
+    <% } %>
+        <div class="card-body">
+            <h5 class="card-title"><%- item.title || theme.default_post_title || "Untitled" %></h5>
+            <% if (item.subtitle && item.subtitle.length) { %>
+                <p class="card-text">
+                    <%- item.subtitle %>
+                </p>
+            <% } %>
+            <p class="card-text">
+                <small class="text-body-secondary">
+                    <!-- Date and Author -->
+                    <% if(item.author) { %>
+                        Posted by <%- item.author %> on
+                    <% } %>
+                    <%= item.date.format(config.date_format) %>
+                </small>
+            </p>
+        </div>
+        <% if (item.categories && item.categories.length || item.tags && item.tags.length) { %>
+            <div class="card-footer">
+                <div class="row justify-content-between">
+                    <div class="col-6 small">
+                        <% if (item.tags && item.tags.length){ %>
+                            <%- partial('article-tags', {item: item}) %>
+                        <% } else { %>
+                            <%- partial('article-categories', {item: item}) %>
+                        <% } %>
+                    </div>
+                    <div class="col-6 text-end small">
+                        <% if (item.tags && item.tags.length && item.categories && item.categories.length){ %>
+                            <%- partial('article-categories', {item: item}) %>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </a>
+  </div>

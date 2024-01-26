@@ -1,0 +1,34 @@
+<%
+    var title = '';
+    if (page.category) title = page.category;
+    if (page.tag) title = "#" + page.tag;
+    if (page.archive) {
+        if (page.year) title = page.year + (page.month ? '/' + page.month : '');
+        else title = __('archive_a');
+    }
+%>
+
+<!-- Page Header -->
+<!-- Set your background image for this header in the theme's configuration: index_cover -->
+<div class="container my-5">
+    <div class="p-5 text-center bg-body-tertiary rounded-3" style="background-image: url('<%- url_for(theme.index_cover) %>'); background-size: cover;">
+        <h1 class="text-body-emphasis"><%- title %></h1>
+    </div>
+</div>
+
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="text-center">
+                <%- partial('_widget/archive-filter') %>
+            </div>
+            <% page.posts.each(function(item){ %>
+                <%- partial('_partial/article-archive', {item: item}) %>
+            <% }); %>
+            <div class="archive-before-pagination"></div>
+            <%- partial('_partial/pagination') %>
+        </div>
+    </div>
+</div>

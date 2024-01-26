@@ -1,0 +1,57 @@
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <div class="col-md-4 d-flex align-items-center">
+            <% if (theme.copyright) { %>
+            <span class="mb-3 mb-md-0 text-body-secondary"><%= theme.copyright %></span>
+            <% } %>
+          </div>
+      
+          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <% if (theme.twitter_url) { %>
+                <li class="ms-3">
+                    <a href="<%- theme.twitter_url%>" target="_blank" class="text-body-secondary">
+                        <i class="bi bi-twitter" width="24" height="24"></i>
+                    </a>
+                </li>
+            <% } %>
+            <% if (theme.facebook_url) { %>
+                <li class="ms-3">
+                    <a href="<%- theme.facebook_url%>" target="_blank" class="text-body-secondary">
+                        <i class="bi bi-facebook" width="24" height="24"></i>
+                    </a>
+                </li>
+            <% } %>
+            <% if (theme.github_url) { %>
+                <li class="ms-3">
+                    <a href="<%- theme.github_url%>" target="_blank" class="text-body-secondary">
+                        <i class="bi bi-github" width="24" height="24"></i>
+                    </a>
+                </li>
+            <% } %>
+            <% if (theme.gitlab_url) { %>
+                <li class="ms-3">
+                    <a href="<%- theme.gitlab_url%>" target="_blank" class="text-body-secondary">
+                        <i class="bi bi-gitlab" width="24" height="24"></i>
+                    </a>
+                </li>
+            <% } %>
+            <% if (theme.linkedin_url) { %>
+                <li class="ms-3">
+                    <a href="<%- theme.linkedin_url%>" target="_blank" class="text-body-secondary">
+                        <i class="bi bi-linkedin" width="24" height="24"></i>
+                    </a>
+                </li>
+            <% } %>
+            <% if (theme.mailto) { %>
+                <li class="ms-3">
+                    <a href="<%- theme.mailto%>" target="_blank" class="text-body-secondary">
+                        <i class="bi bi-envelope" width="24" height="24"></i>
+                    </a>
+                </li>
+            <% } %>
+          </ul>
+        </footer>
+      </div>
+</footer>

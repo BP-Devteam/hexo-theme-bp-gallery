@@ -1,0 +1,27 @@
+<div class="container my-5">
+    <div class="p-5 text-center bg-body-tertiary rounded-3" style="background-image: url('<%- url_for(theme.index_cover) %>'); background-size: cover;">
+        <h1 class="text-body-emphasis"><%- __('category_this', page.category) %></h1>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="container page-categories">
+    <div class="row">
+        <div class="text-center">
+            <% site.categories.each( function (category) { %>
+                <%- partial('_widget/category-item', {category: category}) %>
+            <% }); %>
+        </div>
+        <% if (page.posts.length > 0) { %>
+            <div class="">
+                <hr class="category-preview-hr">
+                <% page.posts.each( function (post) { %>
+                    <%- partial('_partial/pages/category-preview', {post: post}) %>
+                <% }); %>
+                <div class="archive-before-pagination"></div>
+                <%- partial('_partial/pagination') %>
+            </div>
+        <% } %>
+    </div>
+</div>
+

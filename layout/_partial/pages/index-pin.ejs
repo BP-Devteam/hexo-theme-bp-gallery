@@ -1,0 +1,33 @@
+<a href="<%- url_for(post.path) %>">
+<div class="card border-info mb-3 post-preview post-pin" style="max-width: 100%;">
+    <div class="row g-0">
+      <div class="col-md-3">
+            <img src="<%- post.share_cover ? post.share_cover : '/assets/images/imagecap.svg' %>" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-9">
+        <div class="card-body">
+          <h5 class="card-title">
+            
+            <%- post.title || theme.default_post_title || "Untitled" %>
+          </h5>
+          <% if (post.subtitle && post.subtitle.length) { %>
+          <p class="card-text"><%- post.subtitle %></p>
+          <% } %>
+          <% if (post.teaser && post.teaser.length) { %>
+            <p class="card-text"><small class="text-body-secondary"><%- post.teaser %></small></p>
+          <% } %>
+        </div>
+        <div class="card-footer bg-transparent">
+            <p class="post-meta">
+            <!-- Date and Author -->
+            <% if(post.author) { %>
+                Posted by <%- post.author %> on
+            <% } %>
+            <%= post.date.format(config.date_format) %>
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </a>
+  <hr class="post-pin-hr">

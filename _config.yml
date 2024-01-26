@@ -1,0 +1,42 @@
+# Header
+menu:
+  About: /about
+  Archives: /archives
+  Github: https://github.com/BP-Devteam/hexo-theme-bp-blog
+
+# Title on top left of menu. Leave empty to use main blog title
+menu_title: 
+
+# URL of the Home page image
+# index_cover: /images/powder-bg.png
+index_cover: /images/d.jpg
+
+# Default post title
+default_post_title: Untitled
+
+# Comments. Choose one by filling up the information
+comments:
+  # Disqus comments
+  disqus_shortname:
+  # Facebook comments
+  facebook:
+    appid:
+    comment_count: 5
+    comment_colorscheme: light
+
+# Google Analytics Tracking ID
+google_analytics:
+
+# set your own favicon
+favicon: /images/favicon.ico
+
+# Social Accounts
+twitter_url: 
+facebook_url: 
+github_url: 
+gitlab_url: 
+linkedin_url: 
+mailto: official@businesspackage.co.kr
+
+# Footer
+copyright: BP © 2024 Company, Inc

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html <% if(config.language) { %>lang="<%= config.language %>"<% } else { %>lang="en"<% }%> data-bs-theme="auto">
+
+<!-- Head tag -->
+<%- partial('_partial/head') %>
+
+<body>
+
+    <!-- Menu -->
+    <%- partial('_partial/menu') %>
+
+    <!-- color mode button -->
+    <%- partial('_partial/floating-color-mode') %>
+
+    <!-- Main Content -->
+    <%- body %>
+
+    <!-- Footer -->
+    <%- partial('_partial/footer') %>
+
+    <!-- After footer scripts -->
+    <%- partial('_partial/after-footer') %>
+
+   
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<div class="btn-group archives-filter-group" role="group" aria-label="archives filter">
+    <% 
+    var year = parseInt(theme.start_year) || new Date().getFullYear();
+    var current_year = new Date().getFullYear();
+    var i;
+    %>
+
+    <% for (i = year; i<= current_year; i++) { %>
+        <% if (page.year == i) { %>
+            <button type="button" class="btn btn-info" disabled>
+                <%= i %>
+            </button>
+        <% } else { %>
+            <button type="button" class="btn btn-light" onclick="javascript:window,location.href = '<%- url_for('/archives/' + i) %>'">
+                <%= i %>
+            </button>
+        <% } %>
+    <% } %>
+</div>
+<% if (!(page.year)) { %>
+    <button class="btn btn-info archives-filter-all" type="button" disabled>
+        All
+        <span class="badge badge-light"><%- site.posts.length || 0 %></span>
+    </button>
+<% } else { %>
+    <a class="btn btn-light archives-filter-all" href="<%- url_for('/archives/') %>" role="button">
+        All    
+        <span class="badge badge-secondary"><%- site.posts.length || 0 %></span>
+    </a>
+<% } %> 

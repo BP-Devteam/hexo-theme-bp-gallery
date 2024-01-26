@@ -1,0 +1,58 @@
+<!-- Page Header -->
+<!-- Set your background image for this header in the theme's configuration: index_cover -->
+<div class="container my-5">
+    <div class="p-5 text-center bg-body-tertiary rounded-3" style="background-image: url('<%- url_for(theme.index_cover) %>'); background-size: cover;">
+        <h1 class="text-body-emphasis"><%- config.title %></h1>
+        <h2 class="text-body-emphasis"><%- config.subtitle %></h2>
+        <p class="lead"><%- config.description %></p>
+    </div>
+</div>
+
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row d-flex flex-wrap g-1">
+        <% 
+            const arrayPivot = function(array, chunkSize) {
+                function chunkArray(array, chunkSize) {
+                    const result = [];
+                    for (let i = 0; i < array.length; i += chunkSize) {
+                    result.push(array.slice(i, i + chunkSize));
+                    }
+                    return result;
+                }
+                function transposeArray(array) {return array[0].map((_, colIndex) => array.map(row => row[colIndex]));}
+                function mergeArrays(array) {return array.reduce((result, row) => result.concat(row.filter(value => value !== undefined)), []);}
+                function removeUndefined(arr) {return arr.map(subArray => subArray.filter(element => element !== undefined));}
+
+                const chunkedArray = chunkArray(array, chunkSize);
+                const transposedArray = transposeArray(chunkedArray);
+                const mergedArray = removeUndefined(transposedArray);          
+                return mergedArray;
+            }
+
+            let columns = 4; 
+            let perpage = config.per_page || 12 ;
+            const arrayIdx = Array.from({ length: perpage }, (_, index) => index );
+            const pivotedIdx = arrayPivot(arrayIdx,columns);
+            const runningRow = Math.round(perpage/columns);
+
+            pivotedIdx.forEach(function(arr,idx){ 
+        %>
+                <div class="col-lg-3 d-none d-lg-block">
+                <% arr.forEach(function(item,idx){ %>
+                    <% if(page.posts.data[item] !== undefined) {  %>     
+                        <%- partial('_partial/article-index', {item: page.posts.data[item], idx:item}) %>
+                    <% } %>
+                <% }); %>
+                </div>
+        <% }); %>
+        <div class="d-lg-none">
+                <% page.posts.forEach(function(item,idx){ %>
+                        <%- partial('_partial/article-index', {item: item, idx:idx}) %>
+                <% }); %>
+        </div>
+    </div>
+    <%- partial('_partial/pagination') %>
+</div>
+

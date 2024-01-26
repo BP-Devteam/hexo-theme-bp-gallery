@@ -1,0 +1,28 @@
+<div class="container my-5">
+    <div class="p-5 text-center bg-body-tertiary rounded-3" style="background-image: url('<%- url_for(theme.index_cover) %>'); background-size: cover;">
+        <h1 class="text-body-emphasis"><%- __('tag_this', page.tag) %></h1>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="container page-tags">
+    <div class="row">
+        <div class="text-center">
+            <% site.tags.each( function (tag) { %>
+                <%- partial('_widget/tag-item', {tag: tag}) %>
+            <% }); %>
+        </div>
+        <% if (page.posts.length > 0) { %>
+            <div class="">
+                <hr class="tag-preview-hr">
+                <% page.posts.each( function (post) { %>
+                    <%- partial('_partial/pages/tag-preview', {post: post}) %>
+                <% }); %>
+                <div class="archive-before-pagination"></div>
+                <%- partial('_partial/pagination') %>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+

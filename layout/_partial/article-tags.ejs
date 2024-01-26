@@ -1,0 +1,10 @@
+
+<%
+    var tags = [];
+    item.tags.forEach(function(tag){
+        tags.push('<a href="' + config.root + tag.path + '" class="text-decoration-none text-secondary">#' + tag.name + '</a>');
+    });
+%>
+
+<%- tags.join(' ') %>
+

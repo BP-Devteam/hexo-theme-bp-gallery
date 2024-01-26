@@ -1,0 +1,8 @@
+<%
+    var categories = [];
+    item.categories.forEach(function(category){
+        categories.push('<a href="' + config.root + category.path + '" class="text-decoration-none text-secondary">' + category.name + '</a>');
+    });
+%>
+
+<%- categories.join('/ ') %>

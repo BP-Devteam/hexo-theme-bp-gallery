@@ -8,6 +8,9 @@
 
 Hexo implementation of [Clean Blog](http://blackrockdigital.github.io/startbootstrap-clean-blog/index.html)
 
+## Demo 
+![Hexo-theme-bp-gallery](https://hexo-theme-bp-gallery.web.app/)
+
 ## Features
 
 - Dark Theme

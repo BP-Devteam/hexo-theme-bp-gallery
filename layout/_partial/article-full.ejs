@@ -7,6 +7,19 @@
 <!-- Post Content -->
 <article>
     <div class="container">
+        <div class="row">
+            <div class="col mb-1 d-flex justify-content-between small text-secondary text-opacity-50">
+                <div>page views <span class="s3_pv">0</span></div>
+                 <!-- Date and Author -->
+                 <% if(item.author) { %>
+                    <div>Posted by <span><%- item.author %></span></div>
+                <% } %>
+                
+                <div>update <span><%= item.date.format(config.date_format) %></span></div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
         <!-- Cover Image -->
         <% if (item.cover){ %>
             <div class="row">

@@ -33,16 +33,16 @@ Hexo implementation of [Clean Blog](http://blackrockdigital.github.io/startboots
 ## Installation
 
 ```
-$ git clone https://github.com/BP-Devteam/hexo-theme-bp-blog themes/bp-blog
+$ git clone https://github.com/BP-Devteam/hexo-theme-bp-blog themes/bp-gallery
 ```
 
-Then update your blog's main `_config.yml` to set the theme to `bp-blog`:
+Then update your blog's main `_config.yml` to set the theme to `bp-gallery`:
 
 ```
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: bp-blog
+theme: bp-gallery
 ```
 
 ## Configuration
@@ -55,7 +55,7 @@ The menu is configured in the theme's `_config.yml`.
 # Header
 menu:
   Archives: /archives
-  Github: https://github.com/BP-Devteam/hexo-theme-bp-blog
+  Github: https://github.com/BP-Devteam/hexo-theme-bp-gallery
 ```
 
 The object key is the label and the value is the path, or you can use a icon (font awesome) like menu item.

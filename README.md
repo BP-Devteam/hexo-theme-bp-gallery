@@ -1,14 +1,18 @@
-# BP Blog Hexo
+# BP Gallery for Hexo
 
-![](http://www.codeblocq.com/img/hexo-theme-thumbnail/CleanBlog.png)
+## Light mode 
+![](https://github.com/BP-Devteam/hexo-theme-bp-gallery/blob/main/source/images/pc_light.png?raw=true)
+
+## Dark mode 
+![](https://github.com/BP-Devteam/hexo-theme-bp-gallery/blob/main/source/images/pc_dark.png?raw=true)
 
 Hexo implementation of [Clean Blog](http://blackrockdigital.github.io/startbootstrap-clean-blog/index.html)
 
 ## Features
 
 - Dark Theme
-- vanillaJS. (No Jquery)
-- BootStrap5 (No custom CSS)
+- **vanillaJS** (No Jquery)
+- **BootStrap5** (No custom CSS)
 - Google Analytics
 - Cover image for posts and pages
 - Tags and Categories Support

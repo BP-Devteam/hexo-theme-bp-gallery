@@ -2,7 +2,7 @@
 menu:
   Getting Start: /getting-start
   Archives: /archives
-  Github: https://github.com/BP-Devteam/hexo-theme-bp-blog
+  Github: https://github.com/BP-Devteam/hexo-theme-bp-gallery
 
 # Title on top left of menu. Leave empty to use main blog title
 menu_title: 
@@ -33,7 +33,7 @@ favicon: /images/favicon.ico
 # Social Accounts
 twitter_url: /
 facebook_url: /
-github_url: /
+github_url: https://github.com/BP-Devteam/hexo-theme-bp-gallery
 gitlab_url: /
 linkedin_url: / 
 mailto: official@businesspackage.co.kr

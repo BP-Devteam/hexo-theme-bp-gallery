@@ -1,6 +1,6 @@
 # Header
 menu:
-  About: /about
+  Getting Start: /getting-start
   Archives: /archives
   Github: https://github.com/BP-Devteam/hexo-theme-bp-blog
 
@@ -9,7 +9,7 @@ menu_title:
 
 # URL of the Home page image
 # index_cover: /images/powder-bg.png
-index_cover: /images/d.jpg
+index_cover: /images/b.jpg
 
 # Default post title
 default_post_title: Untitled
@@ -31,12 +31,12 @@ google_analytics:
 favicon: /images/favicon.ico
 
 # Social Accounts
-twitter_url: 
-facebook_url: 
-github_url: 
-gitlab_url: 
-linkedin_url: 
+twitter_url: /
+facebook_url: /
+github_url: /
+gitlab_url: /
+linkedin_url: / 
 mailto: official@businesspackage.co.kr
 
 # Footer
-copyright: BP © 2024 Company, Inc
+copyright: © 2024 BP Devteam

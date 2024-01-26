@@ -8,6 +8,7 @@ hexo.extend.injector.register('head_end', ()=>{ return '<link rel="stylesheet" h
 hexo.extend.injector.register('head_end', ()=>{ return '<link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.css">'});
 hexo.extend.injector.register('head_end', ()=>{ return '<script src="/js/bootstrap.bundle.min.js"></script>'});
 hexo.extend.injector.register('head_end', ()=>{ return '<script type="module" src="/js/color-modes.js"></script>'});
+hexo.extend.injector.register('head_end', ()=>{ return '<link rel="stylesheet" href="/css/highlight.css">'});
 
 //clipboard module 
 //hexo.extend.injector.register('head_end', ()=>{ return '<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>'});

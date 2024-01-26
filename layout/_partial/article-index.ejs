@@ -1,8 +1,9 @@
-<div class="card mb-3">
+<div class="card mb-1">
     <a href="<%- config.root %><%- item.path %>" class="text-decoration-none">
     <% if(item.cover) { %>
-    <img src="<%- item.cover %>" class="card-img-top" alt="...">
+    <img src="<%- item.cover_thumbnail || item.cover %>" class="card-img-top" alt="...">
     <% } %>
+    <% if(!item.coveronly){ %>
         <div class="card-body">
             <h5 class="card-title"><%- item.title || theme.default_post_title || "Untitled" %></h5>
             <% if (item.subtitle && item.subtitle.length) { %>
@@ -38,5 +39,6 @@
                 </div>
             </div>
         <% } %>
+    <% } %>
     </a>
   </div>

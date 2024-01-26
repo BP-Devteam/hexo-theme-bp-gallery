@@ -9,7 +9,7 @@ menu_title:
 
 # URL of the Home page image
 # index_cover: /images/powder-bg.png
-index_cover: /images/b.jpg
+index_cover:
 
 # Default post title
 default_post_title: Untitled
